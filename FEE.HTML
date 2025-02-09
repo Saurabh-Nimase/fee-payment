@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fee Payment Receipt</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            border: 2px solid black;
+            max-width: 600px;
+            margin: auto;
+        }
+        .header {
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+            padding: 10px;
+        }
+        .signature {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .signature div {
+            text-align: center;
+            width: 45%;
+        }
+        .print-btn {
+            margin-top: 20px;
+            text-align: center;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        NEW HORIZON INSTITUTE OF TECHNOLOGY AND MANAGEMENT  
+        <br>Fee Payment Receipt
+    </div>
+
+    <table>
+        <tr>
+            <th>Student Name</th>
+            <td><input type="text" id="studentName" placeholder="Enter name"></td>
+        </tr>
+        <tr>
+            <th>Student ID</th>
+            <td><input type="text" id="studentID" placeholder="Enter ID"></td>
+        </tr>
+        <tr>
+            <th>Mobile Number</th>
+            <td><input type="text" id="studentMobile" placeholder="Enter mobile"></td>
+        </tr>
+        <tr>
+            <th>Amount Paid</th>
+            <td><input type="text" id="amountPaid" placeholder="Enter amount"></td>
+        </tr>
+        <tr>
+            <th>Payment Mode</th>
+            <td>
+                <select id="paymentMode">
+                    <option>Cash</option>
+                    <option>Credit Card</option>
+                    <option>Debit Card</option>
+                    <option>UPI</option>
+                    <option>Net Banking</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <th>Date</th>
+            <td id="date"></td>
+        </tr>
+    </table>
+
+    <div class="signature">
+        <div>
+            <p>Student Signature</p>
+            <br>________________
+        </div>
+        <div>
+            <p>Receiver Name & Sign</p>
+            <input type="text" id="receiverName" placeholder="Enter receiver name">
+            <br>________________
+        </div>
+    </div>
+
+    <div class="print-btn">
+        <button onclick="printReceipt()">Print Receipt</button>
+    </div>
+
+    <script>
+        document.getElementById('date').innerText = new Date().toLocaleDateString();
+
+        function printReceipt() {
+            window.print();
+        }
+    </script>
+
+</body>
+</html>
